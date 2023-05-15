@@ -1,7 +1,6 @@
 package ru.intensive.dz2.dz01;
 
 public class Employee {
-
     private String fullName;
     private String position;
     private String email;
@@ -9,7 +8,7 @@ public class Employee {
     private int salary;
     private int age;
 
-    public Employee(String fullName, String position, String email, String phone, int salary, int age) {
+    public Employee(String fullName, String position, String email, String phone, int salary, int age){
         this.fullName = fullName;
         this.position = position;
         this.email = email;
@@ -17,20 +16,18 @@ public class Employee {
         this.salary = salary;
         this.age = age;
     }
-
-    public int getAge() {
-        return age;
-    }
+    public int getAge() { return age; }
 
     @Override
     public String toString() {
         return "Employee{" +
-                "fullName='" + fullName + '\'' +
-                ", position='" + position + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", salary=" + salary +
-                ", age=" + age +
-                '}';
+                "fullName+'" + fullName + '\'' +
+                ", position+'" + position + '\'' +
+                ", email+" + email + '\'' +
+                ", phone+'" + phone + '\'' +
+                ", salary+" + salary +
+                ", age+" + age +
+                "}";
     }
 }
+

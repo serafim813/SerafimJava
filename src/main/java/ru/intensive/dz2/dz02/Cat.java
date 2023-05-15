@@ -2,7 +2,8 @@ package ru.intensive.dz2.dz02;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class Cat extends Animals {
+public class Cat extends Animals{
+
     private static final AtomicInteger count = new AtomicInteger();
 
     public Cat() {
@@ -13,14 +14,17 @@ public class Cat extends Animals {
         );
         count.incrementAndGet();
     }
-    public static int getCount() {return count.get();}
+
+    public static int getCount() {
+        return count.get();
+    }
 
     @Override
     public String toString() {
-        return "Cat1{"+
+        return "Cat{" +
                 "runLimit=" + runLimit +
                 ", swimLimit=" + swimLimit +
                 ", leapLimit=" + leapLimit +
-                "}";
+                '}';
     }
 }

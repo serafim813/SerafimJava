@@ -1,11 +1,9 @@
 package ru.intensive.dz2.dz02;
 
-public class AnimalExample1 {
+public class AnimalExample {
     public static void main(String[] args) {
-        Cat23 cat = new Cat23();
-        //Cat cat = new Cat();
+        Cat cat = new Cat();
         Dog dog = new Dog();
-        //Dog21 dog = new Dog21();
 
         System.out.println(cat);
         System.out.println(dog);
@@ -21,7 +19,7 @@ public class AnimalExample1 {
         System.out.println(dog.leap(3));
 
         Cat cat1 = new Cat();
-        System.out.println(cat.run(400));
-        System.out.println(cat.swim(25));
+        System.out.println(cat1.run(400));
+        System.out.println(cat1.swim(25));
     }
 }
