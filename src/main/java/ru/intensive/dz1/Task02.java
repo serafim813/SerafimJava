@@ -7,33 +7,48 @@ public class Task02 {
         //1. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ]. С помощью цикла и условия заменить 0 на 1, 1 на 0;
         int[] array = new int[]{1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
         System.out.println(Arrays.toString(array));
-        for (int i = 0; i < array.length; i++) {
-            array[i] = array[i] == 0 ? 1 : 0;
+        for (int i = 0; i < array.length; i++){
+            if (array[i] == 0){
+                array[i] = 1;
+            }
+            else {
+                array[i] = 0;
+            }
         }
+
         System.out.println(Arrays.toString(array));
         System.out.println(System.lineSeparator());
 
         //2. Задать пустой целочисленный массив размером 8. С помощью цикла заполнить его значениями 0 3 6 9 12 15 18 21;
         int[] empty = new int[8];
-        for (int i = 0; i < empty.length; i++) {
-            empty[i] = i * 3;
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i * 3;
         }
+
         System.out.println(Arrays.toString(empty));
         System.out.println(System.lineSeparator());
 
         //3. Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по нему циклом, и числа меньшие 6 умножить на 2;
         int[] twice = new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+
         for (int i = 0; i < twice.length; i++) {
-            twice[i] = twice[i] < 6 ? twice[i] * 2 : twice[i];
+            twice[i] = twice[i] < 6 ? twice[i]*2 : twice[i];
         }
+
         System.out.println(Arrays.toString(twice));
         System.out.println(System.lineSeparator());
 
         //4. Создать квадратный двумерный целочисленный массив (количество строк и столбцов одинаковое), и с помощью цикла(-ов) заполнить его диагональные элементы единицами;
         int[][] sq = new int[][]{{0, 0, 0}, {0, 0, 0}, {0, 0, 0}};
         for (int i = 0; i < sq.length; i++) {
-            sq[i][i] = 1;
+            for (int j = 0; j < sq.length; j++) {
+                if (i == j){
+                    sq[i][j] = 1;
+                }
+            }
         }
+
         for (int[] i : sq) {
             System.out.println(Arrays.toString(i));
         }
@@ -45,7 +60,7 @@ public class Task02 {
         for (int j : minMax) {
             if (j < min) {
                 min = j;
-            } else if (j > max) {
+            } else if (max < j) {
                 max = j;
             }
         }
@@ -76,23 +91,24 @@ public class Task02 {
     }
 
     public static boolean checkBalance(int[] array) {
-        int size = 0, l = 0, r = array.length - 1, leftSum = 0, rightSum = 0;
+        int size = 0, p = 0, m = array.length - 1, leftSum = 0, rightSum = 0;
         while (size != array.length) {
             if (leftSum <= rightSum) {
-                leftSum += array[l];
-                l++;
+                leftSum += array[p];
+                p++;
             } else {
-                rightSum += array[r];
-                r--;
+                rightSum += array[m];
+                m--;
             }
             size++;
         }
         return leftSum == rightSum;
+
     }
 
     public static void circle(int[] array, int n) {
-        int counter = Math.abs(n);
-        while (counter != 0) {
+        int r = Math.abs(n);
+        while (r != 0) {
             int a = n > 0 ? array[0] : array[array.length - 1];
             int i = n > 0 ? 0 : array.length - 1;
             if (n > 0) {
@@ -105,7 +121,7 @@ public class Task02 {
                 }
             }
             array[i] = a;
-            counter--;
+            r--;
         }
     }
 }

@@ -7,30 +7,27 @@ public class SwitchCase {
 
     public static void main(String[] args) {
         switch (rand()) {
-            case (1) :
+            case (1):
                 System.out.println("One");
                 break;
-            case (2) :
+            case (2):
                 System.out.println("Two");
                 break;
-            case (3) :
+            case (3):
                 System.out.println("Three");
                 break;
-            case (4) :
+            case (4):
                 System.out.println("Four");
                 break;
-            case (5) :
+            case (5):
                 System.out.println("Five");
                 break;
-            case (6) :
+            case (6):
                 System.out.println("Six");
                 break;
             default:
                 System.out.println("Zero");
         }
     }
-
-    public static int rand() {
-        return dice.nextInt(6);
-    }
+    public static int rand() { return dice.nextInt(6); }
 }

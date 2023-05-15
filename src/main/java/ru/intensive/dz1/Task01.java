@@ -4,22 +4,22 @@ import java.math.BigDecimal;
 
 public class Task01 {
     public static void main(String[] args) {
-        byte by = 1;
-        short sh = 2;
-        int in = 3;
-        long lo = 4;
+        byte by = 0;
+        short sh = 2434;
+        int in = 343;
+        long lo = 423;
         float fl = 5f;
         double db = 6d;
         boolean bl = true;
-        char ch = 'c';
-        BigDecimal bigDecimal = new BigDecimal(7);
+        char ch = 'a';
+        BigDecimal bigDecimal = new BigDecimal(112);
 
-        System.out.println(methodOne(2, 10, 20, 4)); // result : 30
-        System.out.println("Sum between 10 and 20: " + methodTwo(7, 8)); // result : true
-        System.out.println(methodThree(-1)); // result : negative
-        System.out.println(methodFour(-5)); // result : true
-        System.out.println(methodFive("Пользователь"));
-        System.out.println(methodSix(2024));
+        System.out.println(methodOne(2, 10, 20, 4));
+        System.out.println("Сумма между 10 и 20: " + methodTwo(12, 3));
+        System.out.println(methodThree(-12));
+        System.out.println(methodFour(-12));
+        System.out.println(methodFive("TestUser"));
+        System.out.println(methodSix(22));
     }
 
     public static int methodOne(int a, int b, int c, int d) {
@@ -31,7 +31,7 @@ public class Task01 {
     }
 
     public static String methodThree(int a) {
-        return a >= 0 ? "Positive" : "Negative";
+        return a >= 0 ? "Положительное" : "Отрицательное";
     }
 
     public static boolean methodFour(int a) {
@@ -42,7 +42,7 @@ public class Task01 {
         if (name != null && name.length() > 0) {
             return "Привет " + name + "!";
         } else {
-         return "Имя не может быть пустым!";
+         return "Имя не должно быть пустым!";
         }
     }
 
