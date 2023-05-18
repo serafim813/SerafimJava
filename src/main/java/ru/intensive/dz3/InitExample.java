@@ -1,43 +1,41 @@
 package ru.intensive.dz3;
 
 public class InitExample {
-    private static final String STR = getConstant();
-    private String string = getString();
+    private static final String CONSTANT = getConstant();
+    private String field = getField();
 
     public InitExample(String s) {
-        System.out.println(s + "\nЗвучал мне долго голос нежный\n");
-        System.out.println("И снились милые черты.\n");
+        System.out.println(s + " in constructor initialization");
     }
 
     static {
-        System.out.println("Я помню чудное мгновенье:\n");
+        System.out.println("Static initialization 1");
     }
 
     {
-        System.out.println("Как гений чистой красоты.\n");
-        System.out.println(System.lineSeparator());
+        System.out.println("Block initialization 1");
     }
 
     static {
-        System.out.println("Передо мной явилась ты,\n");
+        System.out.println("Static initialization 2");
     }
 
     {
-        System.out.println("В томленьях грусти безнадежной,\n");
+        System.out.println("Block initialization 2");
+    }
+
+    private static String getConstant() {
+        System.out.println("CONSTANT initialization");
+        return "CONSTANT";
+    }
+
+    private String getField() {
+        System.out.println("field initialization");
+        return "field";
     }
 
     public static void main(String[] args) {
-        new InitExample("В тревогах шумной суеты,\n");
-    }
-
-    public static String getConstant() {
-        System.out.println("Александр Пушкин");
-        System.out.println(System.lineSeparator());
-        return "CONST";
-    }
-
-    public static String getString() {
-        System.out.println("Как мимолетное виденье,\n");
-        return "str";
+        new InitExample("FIRST");
+        new InitExample("SECOND");
     }
 }

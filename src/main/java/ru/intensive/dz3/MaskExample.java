@@ -1,4 +1,5 @@
 package ru.intensive.dz3;
+import java.text.DecimalFormat;
 
 public class MaskExample {
     private final int length;
@@ -10,13 +11,11 @@ public class MaskExample {
     public String mapToMask(int number) {
         int numberLength = String.valueOf(number).length();
         if (numberLength > length) {
-            return "Length must be less than " + length;
+            return "Длина числа не может быть больше чем " + length;
         }
-        StringBuilder builder = new StringBuilder(String.valueOf(number));
-        while (builder.length() != length) {
-            builder.insert(0, "0");
-        }
-        return builder.toString();
+        DecimalFormat df = new DecimalFormat("00000000");
+        String s = df.format(number);
+        return s;
     }
 
     public static void main(String[] args) {
