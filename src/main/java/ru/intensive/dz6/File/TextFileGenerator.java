@@ -1,6 +1,5 @@
 package ru.intensive.dz6.File;
 
-
 import java.io.File;
     import java.io.FileWriter;
     import java.io.IOException;
