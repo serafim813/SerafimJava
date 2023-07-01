@@ -26,3 +26,4 @@ public class OutOfMemoryErrorDemo {
         }
     }
 }
+// -Xmx12m -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/Users/mac/Downloads/SerafimJava/src/main/java/ru/intensive/dz5/Tools/OOME.hprof
