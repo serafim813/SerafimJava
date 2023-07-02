@@ -7,20 +7,25 @@ public class GarbageCollectorExample {
     private static final Logger LOGGER = Logger.getLogger(GarbageCollectorExample.class.getName());
 
     public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
 
         while (true) {
             Object obj = new Object(); // Создание объекта
             obj = null; // Удаление ссылки на объект
 
 
-            // Сборка мусора
-            System.gc();
+            // Сборка мусора каждую секунду
+            if (System.currentTimeMillis() - startTime >= 1000) {
+                System.gc();
+                LOGGER.info("Garbage Collector was run");
+                startTime = System.currentTimeMillis();
+            }
 
             // Запись в логи
             LOGGER.info("Garbage Collector was run");
 
             try {
-                Thread.sleep(1000); // ждем 1 секунду
+                Thread.sleep(10); // ждем 10 миллисекунд
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
