@@ -1,3 +1,4 @@
+import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -48,5 +49,16 @@ public class Main {
         };
         String result7 = function2.apply(5);
         System.out.println(result7); // Output: Number: 5
+
+        // Анонимный класс для компаратора
+        Comparator<String> comparator = new Comparator<String>() {
+            @Override
+            public int compare(String str1, String str2) {
+                return str1.compareTo(str2);
+            }
+        };
+
+        int comparisonResult = comparator.compare("apple", "banana");
+        System.out.println(comparisonResult); // Output: -1
     }
 }
