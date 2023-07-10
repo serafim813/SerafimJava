@@ -14,10 +14,8 @@ public class CustomComparatorExample {
         treeMap.put("ab", 3);
         treeMap.put("a", 4);
 
-        // Вывод элементов TreeMap
-        for (String key : treeMap.keySet()) {
-            System.out.println(key + ": " + treeMap.get(key));
-        }
+        // Вывод элементов TreeMap с использованием forEach
+        treeMap.forEach((key, value) -> System.out.println(key + ": " + value));
     }
 
     // Кастомный компаратор
@@ -37,4 +35,3 @@ public class CustomComparatorExample {
         }
     }
 }
-

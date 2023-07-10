@@ -1,8 +1,21 @@
 package ru.intensive.dz8;
 
-import java.util.LinkedList;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Random;
+
+//Сценарий а) Вставка 1000 элементов в начало списка:
+//LinkedList время: 0 мс
+//ArrayList время: 5 мс
+//Сценарий б) Вставка 1000 элементов в конец списка:
+//LinkedList время: 0 мс
+//ArrayList время: 0 мс
+//Сценарий в) Вставка 1000 элементов в середину списка:
+//LinkedList время: 17 мс
+//ArrayList время: 1 мс
+//Сценарий г) Запрос 1000 раз рандомного элемента из списка:
+//LinkedList время: 9 мс
+//ArrayList время: 1 мс
 
 public class ListComparison {
     public static void main(String[] args) {
